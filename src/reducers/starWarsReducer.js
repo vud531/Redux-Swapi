@@ -25,8 +25,6 @@ export const charsReducer = (state = initialState, action) => {
 
     return {
       ...state,
-      error: '',
-      isFetching: false,
       characters: action.payload
     };
 
@@ -35,7 +33,7 @@ export const charsReducer = (state = initialState, action) => {
 
     return {
       ...state,
-      error: "there is an err"
+      error: action.payload
     }
     default:
       return state;

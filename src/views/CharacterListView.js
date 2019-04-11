@@ -26,31 +26,21 @@ class CharacterListView extends React.Component {
       )
     }
 
-    
-    // if (this.props.error) {
-    //   return (
-    //     <div>Failed to fetch data</div>
-    //   )
-    // }
-    if (this.props.characters) {
 
-      return (
-        <div className="CharactersList_wrapper">
-          <CharacterList characters={this.props.characters} />
-        </div>
-      );
-    }
-
-    return (<div></div>)
+    return (
+      <div className="CharactersList_wrapper">
+        <CharacterList characters={this.props.characters} />
+      </div>
+    );
   }
 }
 
 // our mapStateToProps needs to have two properties inherited from state
 // the characters and the fetching boolean
 const mapStateToProps = state => ({
-  characters: state.characters,
-  error: state.error,
-  isFetching: state.isFetching
+  characters: state.charsReducer.characters,
+  error: state.charsReducer.error,
+  isFetching: state.charsReducer.isFetching
 })
 export default connect(
   mapStateToProps /* mapStateToProps replaces null here */,
