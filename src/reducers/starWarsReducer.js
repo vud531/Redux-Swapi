@@ -25,16 +25,18 @@ export const charsReducer = (state = initialState, action) => {
 
     return {
       ...state,
+      isFetching: false,
+      error: null,
       characters: action.payload
     };
 
     case FETCH_DATA_FAILURE:
     console.log(state)
 
-    return {
-      ...state,
-      error: action.payload
-    }
+    // return {
+    //   ...state,
+    //   error: action.payload
+    // }
     default:
       return state;
   }
